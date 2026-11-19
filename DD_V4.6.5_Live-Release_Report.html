@@ -1532,7 +1532,6 @@ html, body {
   // Primary online media sources
   const GH_PAGES_BASE = "https://virajnaik31.github.io/Deals_Dray_Live_Release_Reports/";
   const RAW_BASE = "https://raw.githubusercontent.com/Virajnaik31/Deals_Dray_Live_Release_Reports/main/";
-  const GITHACK_BASE = "https://raw.githack.com/Virajnaik31/Deals_Dray_Live_Release_Reports/main/";
   const JSDELIVR_BASE = "https://cdn.jsdelivr.net/gh/Virajnaik31/Deals_Dray_Live_Release_Reports@main/";
   window.GH_PAGES_BASE = GH_PAGES_BASE;
   window.RAW_BASE = RAW_BASE;
@@ -1543,62 +1542,60 @@ html, body {
       return path;
     }
     const cleanPath = path.replace(/^\.?\//, '');
-    // If running on local server/file or github pages, use relative path if local, else CDN
-    if (window.location.protocol === 'file:') {
+    const loc = (window.location.href || '').replace(/\\/g, '/');
+    // If opened directly inside the full release folder that contains local asset directories:
+    if (window.location.protocol === 'file:' && loc.includes('/DD_V4.6.5_Live-Release_Report/')) {
       return './' + cleanPath;
     }
+    // For standalone file in reports, desktop, or web, use the live Cloud CDN
     return GH_PAGES_BASE + cleanPath;
   }
 
-  // Multi-tier image fallback: GitHub Pages -> GitHub Raw -> Raw Githack -> Local -> jsDelivr
+  // Multi-tier image fallback: GitHub Pages -> GitHub Raw -> jsDelivr -> Local
   window.handleImgError = function(img, originalPath) {
     if (!originalPath) return;
     const cleanPath = originalPath.replace(/^\.?\//, '');
-    
-    if (!img.dataset.step) {
-      img.dataset.step = "1";
-      img.src = RAW_BASE + cleanPath;
-      return;
-    }
-    if (img.dataset.step === "1") {
-      img.dataset.step = "2";
-      img.src = GITHACK_BASE + cleanPath;
-      return;
-    }
-    if (img.dataset.step === "2") {
-      img.dataset.step = "3";
-      img.src = './' + cleanPath;
-      return;
-    }
-    if (img.dataset.step === "3") {
-      img.dataset.step = "4";
-      img.src = JSDELIVR_BASE + cleanPath;
-      return;
+    const step = parseInt(img.dataset.step || "0", 10);
+    const sources = [
+      GH_PAGES_BASE + cleanPath,
+      RAW_BASE + cleanPath,
+      JSDELIVR_BASE + cleanPath,
+      './' + cleanPath
+    ];
+
+    let nextStep = step + 1;
+    while (nextStep <= sources.length) {
+      const candidate = sources[nextStep - 1];
+      if (candidate && candidate !== img.src) {
+        img.dataset.step = String(nextStep);
+        img.src = candidate;
+        return;
+      }
+      nextStep++;
     }
   };
 
-  // Multi-tier video fallback
+  // Multi-tier video fallback: GitHub Pages -> GitHub Raw -> Local
   window.handleVideoError = function(video, originalPath) {
     if (!originalPath) return;
     const cleanPath = originalPath.replace(/^\.?\//, '');
-    
-    if (!video.dataset.step) {
-      video.dataset.step = "1";
-      video.src = RAW_BASE + cleanPath;
-      video.load();
-      return;
-    }
-    if (video.dataset.step === "1") {
-      video.dataset.step = "2";
-      video.src = GITHACK_BASE + cleanPath;
-      video.load();
-      return;
-    }
-    if (video.dataset.step === "2") {
-      video.dataset.step = "3";
-      video.src = './' + cleanPath;
-      video.load();
-      return;
+    const step = parseInt(video.dataset.step || "0", 10);
+    const sources = [
+      GH_PAGES_BASE + cleanPath,
+      RAW_BASE + cleanPath,
+      './' + cleanPath
+    ];
+
+    let nextStep = step + 1;
+    while (nextStep <= sources.length) {
+      const candidate = sources[nextStep - 1];
+      if (candidate && candidate !== video.src) {
+        video.dataset.step = String(nextStep);
+        video.src = candidate;
+        video.load();
+        return;
+      }
+      nextStep++;
     }
   };
 
@@ -2085,9 +2082,9 @@ html, body {
           <div class="video-player-container" id="videoPlayerBox" style="display: ${state.isVideoCollapsed ? 'none' : 'flex'};">
             <video id="testVideoPlayer" controls preload="metadata" src="${getMediaUrl(videoObj.path)}" onerror="handleVideoError(this, '${videoObj.path}')">
               <source src="${getMediaUrl(videoObj.path)}" type="video/webm">
-              <source src="https://raw.githubusercontent.com/Virajnaik31/Deals_Dray_Live_Release_Reports/main/${videoObj.path}" type="video/webm">
-              <source src="https://raw.githack.com/Virajnaik31/Deals_Dray_Live_Release_Reports/main/${videoObj.path}" type="video/webm">
-              <source src="./${videoObj.path}" type="video/webm">
+              <source src="${GH_PAGES_BASE}${videoObj.path.replace(/^\.?\//, '')}" type="video/webm">
+              <source src="${RAW_BASE}${videoObj.path.replace(/^\.?\//, '')}" type="video/webm">
+              <source src="./${videoObj.path.replace(/^\.?\//, '')}" type="video/webm">
               Your browser does not support HTML5 video playback.
             </video>
           </div>
@@ -2371,10 +2368,14 @@ html, body {
     const imgObj = state.lightbox.images[state.lightbox.currentIndex];
     if (!imgObj) return;
 
-    elements.lightboxImg.src = getMediaUrl(imgObj.path); elements.lightboxImg.onerror = function() { handleImgError(this, imgObj.path); };
+    delete elements.lightboxImg.dataset.step;
+    const mediaUrl = getMediaUrl(imgObj.path);
+    elements.lightboxImg.src = mediaUrl;
+    elements.lightboxImg.onerror = function() { handleImgError(this, imgObj.path); };
     elements.lightboxTitle.textContent = imgObj.name || state.lightbox.title;
     elements.lightboxCounter.textContent = `${state.lightbox.currentIndex + 1} / ${state.lightbox.images.length}`;
-    elements.lightboxDownload.href = getMediaUrl(imgObj.path);
+    elements.lightboxDownload.href = mediaUrl;
+    elements.lightboxDownload.setAttribute('target', '_blank');
     elements.lightboxModal.classList.add('active');
   }
 
