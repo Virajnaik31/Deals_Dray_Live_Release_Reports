@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DealsDray Test Automation Reports Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --primary: #2563eb;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 32px 24px;
+    }
+    .container { max-width: 1300px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .header h1 { margin: 0 0 8px 0; font-size: 26px; }
+    .header p { margin: 0; color: var(--text-muted); font-size: 14px; }
+    .stats {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+    .stat-pill {
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .module-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .module-card h2 {
+      margin: 0;
+      padding: 16px 20px;
+      font-size: 16px;
+      background: rgba(0,0,0,0.25);
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 12px 20px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th { color: var(--text-muted); font-weight: 600; font-size: 12px; text-transform: uppercase; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+    code { font-family: monospace; color: var(--text-muted); }
+    .btn {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-right: 6px;
+    }
+    .btn-primary { background: #0284c7; color: white; }
+    .btn-secondary { background: #334155; color: #cbd5e1; }
+    .btn:hover { opacity: 0.9; }
+    .search-box {
+      margin-bottom: 20px;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+    }
+  </style>
+  <script>
+    function filterReports() {
+      const query = document.getElementById('search').value.toLowerCase();
+      const rows = document.querySelectorAll('tbody tr');
+      rows.forEach(r => {
+        const text = r.textContent.toLowerCase();
+        r.style.display = text.includes(query) ? '' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 DealsDray Test Reports Dashboard</h1>
+      <p>Organized modular report repository with standalone videos, screenshots, and Playwright execution traces.</p>
+      <div class="stats">
+        <div class="stat-pill">Total Test Reports: 150</div>
+        <div class="stat-pill">Modules: 4</div>
+        <div class="stat-pill">Last Updated: 19/11/2026, 6:57:44 pm</div>
+      </div>
+    </div>
+
+    <input type="text" id="search" class="search-box" placeholder="🔍 Search tests by name, module, or report path..." onkeyup="filterReports()">
+
+    
+        <div class="module-card">
+          <h2>📂 CMT (37 Reports)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Test / Feature</th>
+                <th>Report Location</th>
+                <th>Screenshots</th>
+                <th>Video</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+        <tr>
+          <td><strong>brandMaster1</strong></td>
+          <td><code>CMT/brandMaster/brandMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/brandMaster/brandMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/brandMaster/brandMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>brandMaster2</strong></td>
+          <td><code>CMT/brandMaster/brandMaster2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/brandMaster/brandMaster2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/brandMaster/brandMaster2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>bulkDelte1</strong></td>
+          <td><code>CMT/bulkproductsDelete/bulkDelte1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/bulkproductsDelete/bulkDelte1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/bulkproductsDelete/bulkDelte1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>campaignBanner1</strong></td>
+          <td><code>CMT/campaignBanner/campaignBanner1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/campaignBanner/campaignBanner1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/campaignBanner/campaignBanner1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>campaignBanner2</strong></td>
+          <td><code>CMT/campaignBanner/campaignBanner2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/campaignBanner/campaignBanner2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/campaignBanner/campaignBanner2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>categoryMaster1</strong></td>
+          <td><code>CMT/categoryMaster/categoryMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/categoryMaster/categoryMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/categoryMaster/categoryMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>categoryMaster2</strong></td>
+          <td><code>CMT/categoryMaster/categoryMaster2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/categoryMaster/categoryMaster2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/categoryMaster/categoryMaster2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>couponCodes1</strong></td>
+          <td><code>CMT/couponCodes/couponCodes1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/couponCodes/couponCodes1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/couponCodes/couponCodes1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>couponCodes2</strong></td>
+          <td><code>CMT/couponCodes/couponCodes2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/couponCodes/couponCodes2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/couponCodes/couponCodes2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>couponCodes3</strong></td>
+          <td><code>CMT/couponCodes/couponCodes3_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/couponCodes/couponCodes3_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/couponCodes/couponCodes3_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>dashboard1</strong></td>
+          <td><code>CMT/dashboard/dashboard1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/dashboard/dashboard1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/dashboard/dashboard1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>exclusiveListing1</strong></td>
+          <td><code>CMT/exclusiveListing/exclusiveListing1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/exclusiveListing/exclusiveListing1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/exclusiveListing/exclusiveListing1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>exclusiveListing2</strong></td>
+          <td><code>CMT/exclusiveListing/exclusiveListing2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/exclusiveListing/exclusiveListing2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/exclusiveListing/exclusiveListing2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>exclusiveListing3</strong></td>
+          <td><code>CMT/exclusiveListing/exclusiveListing3_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/exclusiveListing/exclusiveListing3_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/exclusiveListing/exclusiveListing3_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>gradeMaster1</strong></td>
+          <td><code>CMT/gradeMaster/gradeMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/gradeMaster/gradeMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/gradeMaster/gradeMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>liveListing1</strong></td>
+          <td><code>CMT/liveListing/liveListing1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/liveListing/liveListing1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/liveListing/liveListing1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>manageLP1</strong></td>
+          <td><code>CMT/manageLP/manageLP1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/manageLP/manageLP1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/manageLP/manageLP1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>manageLP2</strong></td>
+          <td><code>CMT/manageLP/manageLP2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/manageLP/manageLP2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/manageLP/manageLP2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productAD1</strong></td>
+          <td><code>CMT/productAD/productAD1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productAD/productAD1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productAD/productAD1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productApproval1</strong></td>
+          <td><code>CMT/productApproval/productApproval1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productApproval/productApproval1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productApproval/productApproval1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productApproval2</strong></td>
+          <td><code>CMT/productApproval/productApproval2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productApproval/productApproval2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productApproval/productApproval2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productListingApproval1</strong></td>
+          <td><code>CMT/productListingApproval/productListingApproval1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productListingApproval/productListingApproval1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productListingApproval/productListingApproval1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productListingApproval2</strong></td>
+          <td><code>CMT/productListingApproval/productListingApproval2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productListingApproval/productListingApproval2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productListingApproval/productListingApproval2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productMaster1</strong></td>
+          <td><code>CMT/productMaster/productMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productMaster/productMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productMaster/productMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productMaster2</strong></td>
+          <td><code>CMT/productMaster/productMaster2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productMaster/productMaster2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productMaster/productMaster2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productMaster3</strong></td>
+          <td><code>CMT/productMaster/productMaster3_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productMaster/productMaster3_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productMaster/productMaster3_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI1</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI2-1</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI2-2</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI2-3</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-3_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-3_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-3_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI2-4</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-4_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-4_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI2-4_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI21</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI21_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI21_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI21_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI22</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI22_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI22_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI22_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI23</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI23_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI23_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI23_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productStockIMEI24</strong></td>
+          <td><code>CMT/productStockIMEI&productIMEIApproval/productStockIMEI24_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI24_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/productStockIMEI&productIMEIApproval/productStockIMEI24_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>staticContent1</strong></td>
+          <td><code>CMT/staticContent/staticContent1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/staticContent/staticContent1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/staticContent/staticContent1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>staticContent2</strong></td>
+          <td><code>CMT/staticContent/staticContent2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="CMT/staticContent/staticContent2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="CMT/staticContent/staticContent2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+      
+
+        <div class="module-card">
+          <h2>📂 ORDERFULFILMENTCHECKLIST (48 Reports)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Test / Feature</th>
+                <th>Report Location</th>
+                <th>Screenshots</th>
+                <th>Video</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+        <tr>
+          <td><strong>case-001</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-001_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-001_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-001_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-002</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-002_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-002_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-002_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-003</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-003_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-003_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-003_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-004</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-004_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-004_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-004_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-005</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-005_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-005_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-005_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-006</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-006_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-006_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-006_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-007</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-007_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-007_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-007_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-008</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-008_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-008_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-008_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-009</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-009_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-009_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-009_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-010</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-010_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-010_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-010_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-011</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-011_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-011_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-011_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-012</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-012_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-012_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-012_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-013</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-013_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-013_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-013_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-014</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-014_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-014_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-014_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-015</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-015_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-015_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-015_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-016</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-016_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-016_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-016_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-017</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-017_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-017_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-017_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-018</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-018_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-018_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-018_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-019</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-019_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-019_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-019_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-020</strong></td>
+          <td><code>orderFulFilmentChecklist/case-001-020/case-020_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-001-020/case-020_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-001-020/case-020_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-021</strong></td>
+          <td><code>orderFulFilmentChecklist/case-021_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-021_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-021_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-022</strong></td>
+          <td><code>orderFulFilmentChecklist/case-022_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-022_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-022_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-023</strong></td>
+          <td><code>orderFulFilmentChecklist/case-023_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-023_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-023_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-024</strong></td>
+          <td><code>orderFulFilmentChecklist/case-024_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-024_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-024_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-025</strong></td>
+          <td><code>orderFulFilmentChecklist/case-025_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-025_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-025_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-026</strong></td>
+          <td><code>orderFulFilmentChecklist/case-026_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-026_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-026_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-027</strong></td>
+          <td><code>orderFulFilmentChecklist/case-027_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-027_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-027_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-028</strong></td>
+          <td><code>orderFulFilmentChecklist/case-028_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-028_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-028_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-029</strong></td>
+          <td><code>orderFulFilmentChecklist/case-029_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-029_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-029_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-030</strong></td>
+          <td><code>orderFulFilmentChecklist/case-030_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-030_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-030_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-031</strong></td>
+          <td><code>orderFulFilmentChecklist/case-031_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-031_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-031_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-032</strong></td>
+          <td><code>orderFulFilmentChecklist/case-032_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-032_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-032_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-033</strong></td>
+          <td><code>orderFulFilmentChecklist/case-033_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-033_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-033_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-034</strong></td>
+          <td><code>orderFulFilmentChecklist/case-034_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-034_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-034_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-035</strong></td>
+          <td><code>orderFulFilmentChecklist/case-035_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-035_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-035_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-036</strong></td>
+          <td><code>orderFulFilmentChecklist/case-036_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-036_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-036_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-037</strong></td>
+          <td><code>orderFulFilmentChecklist/case-037_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-037_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-037_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-038</strong></td>
+          <td><code>orderFulFilmentChecklist/case-038_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-038_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-038_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-039</strong></td>
+          <td><code>orderFulFilmentChecklist/case-039_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-039_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-039_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-040</strong></td>
+          <td><code>orderFulFilmentChecklist/case-040_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-040_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-040_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-041</strong></td>
+          <td><code>orderFulFilmentChecklist/case-041_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-041_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-041_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-042</strong></td>
+          <td><code>orderFulFilmentChecklist/case-042_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-042_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-042_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-043</strong></td>
+          <td><code>orderFulFilmentChecklist/case-043_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-043_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-043_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-044</strong></td>
+          <td><code>orderFulFilmentChecklist/case-044_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-044_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-044_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-045</strong></td>
+          <td><code>orderFulFilmentChecklist/case-045_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-045_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-045_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-046</strong></td>
+          <td><code>orderFulFilmentChecklist/case-046_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-046_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-046_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-047</strong></td>
+          <td><code>orderFulFilmentChecklist/case-047_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-047_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-047_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>case-048</strong></td>
+          <td><code>orderFulFilmentChecklist/case-048_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="orderFulFilmentChecklist/case-048_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="orderFulFilmentChecklist/case-048_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+      
+
+        <div class="module-card">
+          <h2>📂 SELFPICKUP (10 Reports)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Test / Feature</th>
+                <th>Report Location</th>
+                <th>Screenshots</th>
+                <th>Video</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+        <tr>
+          <td><strong>step-01</strong></td>
+          <td><code>selfPickup/step-01_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-01_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-01_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-02</strong></td>
+          <td><code>selfPickup/step-02_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-02_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-02_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-03</strong></td>
+          <td><code>selfPickup/step-03_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-03_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-03_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-04</strong></td>
+          <td><code>selfPickup/step-04_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-04_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-04_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-05</strong></td>
+          <td><code>selfPickup/step-05_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-05_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-05_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-06</strong></td>
+          <td><code>selfPickup/step-06_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-06_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-06_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-07</strong></td>
+          <td><code>selfPickup/step-07_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-07_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-07_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-08</strong></td>
+          <td><code>selfPickup/step-08_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-08_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-08_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-09</strong></td>
+          <td><code>selfPickup/step-09_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-09_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-09_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>step-10</strong></td>
+          <td><code>selfPickup/step-10_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="selfPickup/step-10_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="selfPickup/step-10_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+      
+
+        <div class="module-card">
+          <h2>📂 SUPERADMIN (55 Reports)</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Test / Feature</th>
+                <th>Report Location</th>
+                <th>Screenshots</th>
+                <th>Video</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+        <tr>
+          <td><strong>buyerEdit1</strong></td>
+          <td><code>superadmin/buyerEdit/buyerEdit1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/buyerEdit/buyerEdit1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/buyerEdit/buyerEdit1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>buyerLedger1</strong></td>
+          <td><code>superadmin/buyerLedger/buyerLedger1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/buyerLedger/buyerLedger1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/buyerLedger/buyerLedger1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_01</strong></td>
+          <td><code>superadmin/cancelOrder/CO_01_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_01_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_01_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_02</strong></td>
+          <td><code>superadmin/cancelOrder/CO_02_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_02_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_02_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_03</strong></td>
+          <td><code>superadmin/cancelOrder/CO_03_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_03_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_03_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_04</strong></td>
+          <td><code>superadmin/cancelOrder/CO_04_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_04_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_04_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_05</strong></td>
+          <td><code>superadmin/cancelOrder/CO_05_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_05_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_05_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_06</strong></td>
+          <td><code>superadmin/cancelOrder/CO_06_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_06_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_06_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_07</strong></td>
+          <td><code>superadmin/cancelOrder/CO_07_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_07_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_07_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>CO_08</strong></td>
+          <td><code>superadmin/cancelOrder/CO_08_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/cancelOrder/CO_08_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/cancelOrder/CO_08_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>coupons1</strong></td>
+          <td><code>superadmin/coupons&couponApproval/coupons1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/coupons&couponApproval/coupons1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/coupons&couponApproval/coupons1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>coupons2</strong></td>
+          <td><code>superadmin/coupons&couponApproval/coupons2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/coupons&couponApproval/coupons2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/coupons&couponApproval/coupons2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>customerSupport1</strong></td>
+          <td><code>superadmin/customerSupport/customerSupport1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/customerSupport/customerSupport1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/customerSupport/customerSupport1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_new_department</strong></td>
+          <td><code>superadmin/departments/create_new_department_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/create_new_department_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/create_new_department_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_new_team_member</strong></td>
+          <td><code>superadmin/departments/create_new_team_member_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/create_new_team_member_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/create_new_team_member_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>delete_department</strong></td>
+          <td><code>superadmin/departments/delete_department_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/delete_department_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/delete_department_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>duplicate_department</strong></td>
+          <td><code>superadmin/departments/duplicate_department_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/duplicate_department_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/duplicate_department_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>edit_rm_department</strong></td>
+          <td><code>superadmin/departments/edit_rm_department_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/edit_rm_department_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/edit_rm_department_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>rename_department</strong></td>
+          <td><code>superadmin/departments/rename_department_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/departments/rename_department_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/departments/rename_department_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_new_designation</strong></td>
+          <td><code>superadmin/designations/create_new_designation_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/designations/create_new_designation_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/designations/create_new_designation_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>delete_designation</strong></td>
+          <td><code>superadmin/designations/delete_designation_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/designations/delete_designation_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/designations/delete_designation_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>duplicate_designation</strong></td>
+          <td><code>superadmin/designations/duplicate_designation_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/designations/duplicate_designation_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/designations/duplicate_designation_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>search_designation</strong></td>
+          <td><code>superadmin/designations/search_designation_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/designations/search_designation_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/designations/search_designation_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>team_member_designation</strong></td>
+          <td><code>superadmin/designations/team_member_designation_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/designations/team_member_designation_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/designations/team_member_designation_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>districtMaster1</strong></td>
+          <td><code>superadmin/districtMaster/districtMaster1_report</code></td>
+          <td>-</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/districtMaster/districtMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/districtMaster/districtMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>emailTemplate1</strong></td>
+          <td><code>superadmin/emailTemplate/emailTemplate1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/emailTemplate/emailTemplate1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/emailTemplate/emailTemplate1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>holidayMaster1</strong></td>
+          <td><code>superadmin/holidayMaster/holidayMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/holidayMaster/holidayMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/holidayMaster/holidayMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>locationMaster1</strong></td>
+          <td><code>superadmin/locationMaster/locationMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/locationMaster/locationMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/locationMaster/locationMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>invalid</strong></td>
+          <td><code>superadmin/login/invalid_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/login/invalid_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/login/invalid_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>valid</strong></td>
+          <td><code>superadmin/login/valid_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/login/valid_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/login/valid_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>logisticMaster1</strong></td>
+          <td><code>superadmin/logisticMaster/logisticMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/logisticMaster/logisticMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/logisticMaster/logisticMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>manageShipping1</strong></td>
+          <td><code>superadmin/manageShipping/manageShipping1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/manageShipping/manageShipping1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/manageShipping/manageShipping1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>manageShipping2</strong></td>
+          <td><code>superadmin/manageShipping/manageShipping2_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/manageShipping/manageShipping2_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/manageShipping/manageShipping2_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>movAll1</strong></td>
+          <td><code>superadmin/movAll/movAll1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/movAll/movAll1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/movAll/movAll1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>configure_razorpay</strong></td>
+          <td><code>superadmin/payment_gateway/configure_razorpay_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/payment_gateway/configure_razorpay_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/payment_gateway/configure_razorpay_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>pincodeMaster1</strong></td>
+          <td><code>superadmin/pincodeMaster/pincodeMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/pincodeMaster/pincodeMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/pincodeMaster/pincodeMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>productTypeMaster1</strong></td>
+          <td><code>superadmin/productTypeMaster/productTypeMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/productTypeMaster/productTypeMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/productTypeMaster/productTypeMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>veiw_feedback</strong></td>
+          <td><code>superadmin/quote&feedback/veiw_feedback_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/quote&feedback/veiw_feedback_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/quote&feedback/veiw_feedback_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>view_quote</strong></td>
+          <td><code>superadmin/quote&feedback/view_quote_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/quote&feedback/view_quote_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/quote&feedback/view_quote_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>stateMaster1</strong></td>
+          <td><code>superadmin/stateMaster/stateMaster1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/stateMaster/stateMaster1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/stateMaster/stateMaster1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>verify_stock_decrease</strong></td>
+          <td><code>superadmin/stock_correction/verify_stock_decrease_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/stock_correction/verify_stock_decrease_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/stock_correction/verify_stock_decrease_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>verify_stock_increase</strong></td>
+          <td><code>superadmin/stock_correction/verify_stock_increase_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/stock_correction/verify_stock_increase_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/stock_correction/verify_stock_increase_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>activate_team_member</strong></td>
+          <td><code>superadmin/team_member_master/activate_team_member_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/activate_team_member_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/activate_team_member_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>bulkactivate</strong></td>
+          <td><code>superadmin/team_member_master/bulkactivate_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/bulkactivate_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/bulkactivate_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>bulk_deactivate</strong></td>
+          <td><code>superadmin/team_member_master/bulk_deactivate_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/bulk_deactivate_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/bulk_deactivate_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_pack_member</strong></td>
+          <td><code>superadmin/team_member_master/create_pack_member_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/create_pack_member_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/create_pack_member_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_rm_checker_login</strong></td>
+          <td><code>superadmin/team_member_master/create_rm_checker_login_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/create_rm_checker_login_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/create_rm_checker_login_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>create_warehouse_user_access</strong></td>
+          <td><code>superadmin/team_member_master/create_warehouse_user_access_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/create_warehouse_user_access_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/create_warehouse_user_access_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>deactivate_team_member</strong></td>
+          <td><code>superadmin/team_member_master/deactivate_team_member_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/deactivate_team_member_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/deactivate_team_member_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>duplicate_email</strong></td>
+          <td><code>superadmin/team_member_master/duplicate_email_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/duplicate_email_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/duplicate_email_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>duplicate_phone</strong></td>
+          <td><code>superadmin/team_member_master/duplicate_phone_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/duplicate_phone_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/duplicate_phone_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>incorrect_heirarchy_member</strong></td>
+          <td><code>superadmin/team_member_master/incorrect_heirarchy_member_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/incorrect_heirarchy_member_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/incorrect_heirarchy_member_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>oft_checker</strong></td>
+          <td><code>superadmin/team_member_master/oft_checker_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/oft_checker_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/oft_checker_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>support_rm</strong></td>
+          <td><code>superadmin/team_member_master/support_rm_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/team_member_master/support_rm_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/team_member_master/support_rm_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+
+        <tr>
+          <td><strong>zoopException1</strong></td>
+          <td><code>superadmin/zoopException/zoopException1_report</code></td>
+          <td>📸 Screenshots</td>
+          <td>🎥 Video</td>
+          <td>
+            <a href="superadmin/zoopException/zoopException1_report/summary.html" class="btn btn-primary">Summary</a>
+            <a href="superadmin/zoopException/zoopException1_report/index.html" class="btn btn-secondary">Playwright</a>
+          </td>
+        </tr>
+      
+            </tbody>
+          </table>
+        </div>
+      
+  </div>
+</body>
+</html>
