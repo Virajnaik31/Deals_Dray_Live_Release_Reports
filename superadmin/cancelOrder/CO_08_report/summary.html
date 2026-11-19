@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CO_08 - Test Report</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .title h1 { margin: 0 0 6px 0; font-size: 24px; }
+    .title .meta { color: var(--text-muted); font-size: 14px; }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #10b98122;
+      color: #10b981;
+      border: 1px solid #10b981;
+    }
+    .section { margin-bottom: 32px; }
+    .section h2 { font-size: 18px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .card-header { padding: 8px 12px; font-size: 12px; font-family: monospace; color: var(--text-muted); background: rgba(0,0,0,0.2); }
+    .card img { width: 100%; display: block; cursor: pointer; transition: transform 0.2s; }
+    .card img:hover { opacity: 0.95; }
+    .video-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 800px;
+    }
+    video { width: 100%; display: block; }
+    .error-box pre {
+      background: #450a0a;
+      border: 1px solid #dc2626;
+      color: #fca5a5;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .nav-links a { color: var(--accent); text-decoration: none; margin-right: 16px; font-size: 14px; }
+    .nav-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <h1>Cancellation after shipment booked - COD</h1>
+        <div class="meta">Module: <strong>superadmin\cancelOrder</strong> | Spec: <code>CO_08.spec.ts</code> | Duration: <strong>252.0s</strong></div>
+      </div>
+      <div>
+        <span class="badge">passed</span>
+      </div>
+    </div>
+
+    <div class="nav-links" style="margin-bottom: 20px;">
+      <a href="index.html">📋 View Playwright Trace Report</a>
+      <a href="../../index.html">🏠 Back to Master Dashboard</a>
+    </div>
+
+    
+    
+      <div class="section">
+        <h2>🎥 Video Recording</h2>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="videos/CO_08_video.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    
+
+    <div class="section">
+      <h2>📸 Captured Screenshots (53)</h2>
+      <div class="grid">
+      <div class="card screenshot-card">
+        <div class="card-header">#1: 01_oft_order_assignment_pending_list.png</div>
+        <a href="screenshots/01_oft_order_assignment_pending_list.png" target="_blank">
+          <img src="screenshots/01_oft_order_assignment_pending_list.png" alt="01_oft_order_assignment_pending_list.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#2: 02_oft_order_searched.png</div>
+        <a href="screenshots/02_oft_order_searched.png" target="_blank">
+          <img src="screenshots/02_oft_order_searched.png" alt="02_oft_order_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#3: 03_oft_order_details.png</div>
+        <a href="screenshots/03_oft_order_details.png" target="_blank">
+          <img src="screenshots/03_oft_order_details.png" alt="03_oft_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#4: 04_oft_assignment_form_filled.png</div>
+        <a href="screenshots/04_oft_assignment_form_filled.png" target="_blank">
+          <img src="screenshots/04_oft_assignment_form_filled.png" alt="04_oft_assignment_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#5: 05_oft_assignment_submit_popup.png</div>
+        <a href="screenshots/05_oft_assignment_submit_popup.png" target="_blank">
+          <img src="screenshots/05_oft_assignment_submit_popup.png" alt="05_oft_assignment_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#6: 06_rm_order_searched.png</div>
+        <a href="screenshots/06_rm_order_searched.png" target="_blank">
+          <img src="screenshots/06_rm_order_searched.png" alt="06_rm_order_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#7: 07_rm_order_details.png</div>
+        <a href="screenshots/07_rm_order_details.png" target="_blank">
+          <img src="screenshots/07_rm_order_details.png" alt="07_rm_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#8: 08_rm_confirmation_form_filled.png</div>
+        <a href="screenshots/08_rm_confirmation_form_filled.png" target="_blank">
+          <img src="screenshots/08_rm_confirmation_form_filled.png" alt="08_rm_confirmation_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#9: 09_rm_confirmation_submit_popup.png</div>
+        <a href="screenshots/09_rm_confirmation_submit_popup.png" target="_blank">
+          <img src="screenshots/09_rm_confirmation_submit_popup.png" alt="09_rm_confirmation_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#10: 10_act_order_searched.png</div>
+        <a href="screenshots/10_act_order_searched.png" target="_blank">
+          <img src="screenshots/10_act_order_searched.png" alt="10_act_order_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#11: 11_act_order_details.png</div>
+        <a href="screenshots/11_act_order_details.png" target="_blank">
+          <img src="screenshots/11_act_order_details.png" alt="11_act_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#12: 12_act_confirmation_form_filled.png</div>
+        <a href="screenshots/12_act_confirmation_form_filled.png" target="_blank">
+          <img src="screenshots/12_act_confirmation_form_filled.png" alt="12_act_confirmation_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#13: 13_act_confirmation_submit_popup.png</div>
+        <a href="screenshots/13_act_confirmation_submit_popup.png" target="_blank">
+          <img src="screenshots/13_act_confirmation_submit_popup.png" alt="13_act_confirmation_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#14: 14_oft_process_order_searched.png</div>
+        <a href="screenshots/14_oft_process_order_searched.png" target="_blank">
+          <img src="screenshots/14_oft_process_order_searched.png" alt="14_oft_process_order_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#15: 15_oft_process_order_details.png</div>
+        <a href="screenshots/15_oft_process_order_details.png" target="_blank">
+          <img src="screenshots/15_oft_process_order_details.png" alt="15_oft_process_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#16: 16_oft_process_form_filled.png</div>
+        <a href="screenshots/16_oft_process_form_filled.png" target="_blank">
+          <img src="screenshots/16_oft_process_form_filled.png" alt="16_oft_process_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#17: 17_confirm_pickup_slip_popup.png</div>
+        <a href="screenshots/17_confirm_pickup_slip_popup.png" target="_blank">
+          <img src="screenshots/17_confirm_pickup_slip_popup.png" alt="17_confirm_pickup_slip_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#18: 18_oft_final_confirmed_list.png</div>
+        <a href="screenshots/18_oft_final_confirmed_list.png" target="_blank">
+          <img src="screenshots/18_oft_final_confirmed_list.png" alt="18_oft_final_confirmed_list.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#19: 19_oft_final_confirmed_details.png</div>
+        <a href="screenshots/19_oft_final_confirmed_details.png" target="_blank">
+          <img src="screenshots/19_oft_final_confirmed_details.png" alt="19_oft_final_confirmed_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#20: 20_wh_pending_orders_list.png</div>
+        <a href="screenshots/20_wh_pending_orders_list.png" target="_blank">
+          <img src="screenshots/20_wh_pending_orders_list.png" alt="20_wh_pending_orders_list.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#21: 21_wh_order_details.png</div>
+        <a href="screenshots/21_wh_order_details.png" target="_blank">
+          <img src="screenshots/21_wh_order_details.png" alt="21_wh_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#22: 22_wh_order_sections_expanded.png</div>
+        <a href="screenshots/22_wh_order_sections_expanded.png" target="_blank">
+          <img src="screenshots/22_wh_order_sections_expanded.png" alt="22_wh_order_sections_expanded.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#23: 23_wh_product_sku_extracted.png</div>
+        <a href="screenshots/23_wh_product_sku_extracted.png" target="_blank">
+          <img src="screenshots/23_wh_product_sku_extracted.png" alt="23_wh_product_sku_extracted.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#24: 24_stock_audit_report_466095.png</div>
+        <a href="screenshots/24_stock_audit_report_466095.png" target="_blank">
+          <img src="screenshots/24_stock_audit_report_466095.png" alt="24_stock_audit_report_466095.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#25: 25_imei_extracted_466095.png</div>
+        <a href="screenshots/25_imei_extracted_466095.png" target="_blank">
+          <img src="screenshots/25_imei_extracted_466095.png" alt="25_imei_extracted_466095.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#26: 26_wh_order_details_for_imei_fill.png</div>
+        <a href="screenshots/26_wh_order_details_for_imei_fill.png" target="_blank">
+          <img src="screenshots/26_wh_order_details_for_imei_fill.png" alt="26_wh_order_details_for_imei_fill.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#27: 27_wh_imeis_filled.png</div>
+        <a href="screenshots/27_wh_imeis_filled.png" target="_blank">
+          <img src="screenshots/27_wh_imeis_filled.png" alt="27_wh_imeis_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#28: 28_wh_ready_to_pack_form_filled.png</div>
+        <a href="screenshots/28_wh_ready_to_pack_form_filled.png" target="_blank">
+          <img src="screenshots/28_wh_ready_to_pack_form_filled.png" alt="28_wh_ready_to_pack_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#29: 29_wh_submit_popup.png</div>
+        <a href="screenshots/29_wh_submit_popup.png" target="_blank">
+          <img src="screenshots/29_wh_submit_popup.png" alt="29_wh_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#30: 30_wh_processed_order_details.png</div>
+        <a href="screenshots/30_wh_processed_order_details.png" target="_blank">
+          <img src="screenshots/30_wh_processed_order_details.png" alt="30_wh_processed_order_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#31: 31_packing_ready_to_pack_list.png</div>
+        <a href="screenshots/31_packing_ready_to_pack_list.png" target="_blank">
+          <img src="screenshots/31_packing_ready_to_pack_list.png" alt="31_packing_ready_to_pack_list.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#32: 32_packing_ready_to_pack_details.png</div>
+        <a href="screenshots/32_packing_ready_to_pack_details.png" target="_blank">
+          <img src="screenshots/32_packing_ready_to_pack_details.png" alt="32_packing_ready_to_pack_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#33: 33_packing_received_selected.png</div>
+        <a href="screenshots/33_packing_received_selected.png" target="_blank">
+          <img src="screenshots/33_packing_received_selected.png" alt="33_packing_received_selected.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#34: 34_packing_received_submit_popup.png</div>
+        <a href="screenshots/34_packing_received_submit_popup.png" target="_blank">
+          <img src="screenshots/34_packing_received_submit_popup.png" alt="34_packing_received_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#35: 35_packing_received_for_packing_details.png</div>
+        <a href="screenshots/35_packing_received_for_packing_details.png" target="_blank">
+          <img src="screenshots/35_packing_received_for_packing_details.png" alt="35_packing_received_for_packing_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#36: 36_packing_form_filled_correct_invoice.png</div>
+        <a href="screenshots/36_packing_form_filled_correct_invoice.png" target="_blank">
+          <img src="screenshots/36_packing_form_filled_correct_invoice.png" alt="36_packing_form_filled_correct_invoice.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#37: 37_packing_ready_to_ship_submit_popup.png</div>
+        <a href="screenshots/37_packing_ready_to_ship_submit_popup.png" target="_blank">
+          <img src="screenshots/37_packing_ready_to_ship_submit_popup.png" alt="37_packing_ready_to_ship_submit_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#38: 38_packing_final_details.png</div>
+        <a href="screenshots/38_packing_final_details.png" target="_blank">
+          <img src="screenshots/38_packing_final_details.png" alt="38_packing_final_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#39: 39_oft_order_packed_details.png</div>
+        <a href="screenshots/39_oft_order_packed_details.png" target="_blank">
+          <img src="screenshots/39_oft_order_packed_details.png" alt="39_oft_order_packed_details.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#40: 40_oft_order_packed_process_clicked.png</div>
+        <a href="screenshots/40_oft_order_packed_process_clicked.png" target="_blank">
+          <img src="screenshots/40_oft_order_packed_process_clicked.png" alt="40_oft_order_packed_process_clicked.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#41: 41_oft_process_ship_to_success.png</div>
+        <a href="screenshots/41_oft_process_ship_to_success.png" target="_blank">
+          <img src="screenshots/41_oft_process_ship_to_success.png" alt="41_oft_process_ship_to_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#42: 42_oft_process_generate_awb_success.png</div>
+        <a href="screenshots/42_oft_process_generate_awb_success.png" target="_blank">
+          <img src="screenshots/42_oft_process_generate_awb_success.png" alt="42_oft_process_generate_awb_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#43: 43_oft_process_remark_filled.png</div>
+        <a href="screenshots/43_oft_process_remark_filled.png" target="_blank">
+          <img src="screenshots/43_oft_process_remark_filled.png" alt="43_oft_process_remark_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#44: 44_oft_process_ready_to_ship_success.png</div>
+        <a href="screenshots/44_oft_process_ready_to_ship_success.png" target="_blank">
+          <img src="screenshots/44_oft_process_ready_to_ship_success.png" alt="44_oft_process_ready_to_ship_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#45: 45_oft_out_station_ready_to_ship_searched.png</div>
+        <a href="screenshots/45_oft_out_station_ready_to_ship_searched.png" target="_blank">
+          <img src="screenshots/45_oft_out_station_ready_to_ship_searched.png" alt="45_oft_out_station_ready_to_ship_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#46: 46_oft_out_station_manifest_checked.png</div>
+        <a href="screenshots/46_oft_out_station_manifest_checked.png" target="_blank">
+          <img src="screenshots/46_oft_out_station_manifest_checked.png" alt="46_oft_out_station_manifest_checked.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#47: 47_oft_out_station_request_manifest_success.png</div>
+        <a href="screenshots/47_oft_out_station_request_manifest_success.png" target="_blank">
+          <img src="screenshots/47_oft_out_station_request_manifest_success.png" alt="47_oft_out_station_request_manifest_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#48: 48_superadmin_cancel_orders_list.png</div>
+        <a href="screenshots/48_superadmin_cancel_orders_list.png" target="_blank">
+          <img src="screenshots/48_superadmin_cancel_orders_list.png" alt="48_superadmin_cancel_orders_list.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#49: 49_superadmin_order_searched.png</div>
+        <a href="screenshots/49_superadmin_order_searched.png" target="_blank">
+          <img src="screenshots/49_superadmin_order_searched.png" alt="49_superadmin_order_searched.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#50: 50_superadmin_cancel_dialog_open.png</div>
+        <a href="screenshots/50_superadmin_cancel_dialog_open.png" target="_blank">
+          <img src="screenshots/50_superadmin_cancel_dialog_open.png" alt="50_superadmin_cancel_dialog_open.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#51: 51_superadmin_cancel_remark_filled.png</div>
+        <a href="screenshots/51_superadmin_cancel_remark_filled.png" target="_blank">
+          <img src="screenshots/51_superadmin_cancel_remark_filled.png" alt="51_superadmin_cancel_remark_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#52: 52_superadmin_cancel_confirmed_popup.png</div>
+        <a href="screenshots/52_superadmin_cancel_confirmed_popup.png" target="_blank">
+          <img src="screenshots/52_superadmin_cancel_confirmed_popup.png" alt="52_superadmin_cancel_confirmed_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#53: 53_superadmin_order_not_found.png</div>
+        <a href="screenshots/53_superadmin_order_not_found.png" target="_blank">
+          <img src="screenshots/53_superadmin_order_not_found.png" alt="53_superadmin_order_not_found.png" loading="lazy" />
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

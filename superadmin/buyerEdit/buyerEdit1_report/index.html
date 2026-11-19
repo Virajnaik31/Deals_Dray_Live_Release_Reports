@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>buyerEdit1 - Test Report</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --pass: #10b981;
+      --fail: #ef4444;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 32px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .title { font-size: 22px; font-weight: 700; margin: 0; }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--pass);
+      border: 1px solid var(--pass);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .metric-value { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; margin: 0 0 16px 0; color: var(--accent); }
+    .error-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid var(--fail);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #fca5a5;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .video-container {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    video { width: 100%; height: auto; display: block; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0d131f;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-label {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content { max-width: 90%; max-height: 85%; }
+    .lightbox-content img { max-width: 100%; max-height: 80vh; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .lightbox-caption { color: #fff; margin-top: 12px; font-size: 14px; text-align: center; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 32px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-links">
+      <a href="../../index.html">🏠 Back to Master Dashboard</a>
+    </div>
+
+    <div class="header">
+      <div>
+        <h1 class="title">test</h1>
+        <p style="color: var(--text-muted); font-size: 13px; margin: 4px 0 0 0;">Module: <strong>superadmin\buyerEdit</strong> | Spec: <code>buyerEdit1.spec.ts</code></p>
+      </div>
+      <span class="badge">PASSED</span>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-label">Duration</div>
+        <div class="metric-value">0.0s</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Screenshots</div>
+        <div class="metric-value">14</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Video Recording</div>
+        <div class="metric-value">Available</div>
+      </div>
+    </div>
+
+    
+
+    
+    <div class="section">
+      <h2 class="section-title">🎥 Video Recording</h2>
+      <div class="video-container">
+        <video controls autoplay muted>
+          <source src="videos/buyerEdit1_video.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📸 Captured Screenshots (14)</h2>
+      
+      <div class="gallery">
+        
+          <div class="gallery-item" onclick="openLightbox('screenshots/01_buyer_edit_list_page.png', '01_buyer_edit_list_page.png')">
+            <img src="screenshots/01_buyer_edit_list_page.png" alt="01_buyer_edit_list_page.png" loading="lazy" />
+            <div class="gallery-label">01_buyer_edit_list_page.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/02_search_by_original_name_filled.png', '02_search_by_original_name_filled.png')">
+            <img src="screenshots/02_search_by_original_name_filled.png" alt="02_search_by_original_name_filled.png" loading="lazy" />
+            <div class="gallery-label">02_search_by_original_name_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/03_search_by_original_name_results.png', '03_search_by_original_name_results.png')">
+            <img src="screenshots/03_search_by_original_name_results.png" alt="03_search_by_original_name_results.png" loading="lazy" />
+            <div class="gallery-label">03_search_by_original_name_results.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/04_edit_buyer_page_loaded.png', '04_edit_buyer_page_loaded.png')">
+            <img src="screenshots/04_edit_buyer_page_loaded.png" alt="04_edit_buyer_page_loaded.png" loading="lazy" />
+            <div class="gallery-label">04_edit_buyer_page_loaded.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/05_edit_buyer_details_filled.png', '05_edit_buyer_details_filled.png')">
+            <img src="screenshots/05_edit_buyer_details_filled.png" alt="05_edit_buyer_details_filled.png" loading="lazy" />
+            <div class="gallery-label">05_edit_buyer_details_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/06_edit_buyer_saved.png', '06_edit_buyer_saved.png')">
+            <img src="screenshots/06_edit_buyer_saved.png" alt="06_edit_buyer_saved.png" loading="lazy" />
+            <div class="gallery-label">06_edit_buyer_saved.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/07_search_by_new_name_filled.png', '07_search_by_new_name_filled.png')">
+            <img src="screenshots/07_search_by_new_name_filled.png" alt="07_search_by_new_name_filled.png" loading="lazy" />
+            <div class="gallery-label">07_search_by_new_name_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/08_search_by_new_name_results.png', '08_search_by_new_name_results.png')">
+            <img src="screenshots/08_search_by_new_name_results.png" alt="08_search_by_new_name_results.png" loading="lazy" />
+            <div class="gallery-label">08_search_by_new_name_results.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/09_view_logs_popup.png', '09_view_logs_popup.png')">
+            <img src="screenshots/09_view_logs_popup.png" alt="09_view_logs_popup.png" loading="lazy" />
+            <div class="gallery-label">09_view_logs_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/10_delete_account_popup.png', '10_delete_account_popup.png')">
+            <img src="screenshots/10_delete_account_popup.png" alt="10_delete_account_popup.png" loading="lazy" />
+            <div class="gallery-label">10_delete_account_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/11_after_delete_action.png', '11_after_delete_action.png')">
+            <img src="screenshots/11_after_delete_action.png" alt="11_after_delete_action.png" loading="lazy" />
+            <div class="gallery-label">11_after_delete_action.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/12_search_results_after_delete.png', '12_search_results_after_delete.png')">
+            <img src="screenshots/12_search_results_after_delete.png" alt="12_search_results_after_delete.png" loading="lazy" />
+            <div class="gallery-label">12_search_results_after_delete.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/13_final_search_by_new_name_filled.png', '13_final_search_by_new_name_filled.png')">
+            <img src="screenshots/13_final_search_by_new_name_filled.png" alt="13_final_search_by_new_name_filled.png" loading="lazy" />
+            <div class="gallery-label">13_final_search_by_new_name_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/14_final_search_by_new_name_results.png', '14_final_search_by_new_name_results.png')">
+            <img src="screenshots/14_final_search_by_new_name_results.png" alt="14_final_search_by_new_name_results.png" loading="lazy" />
+            <div class="gallery-label">14_final_search_by_new_name_results.png</div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
