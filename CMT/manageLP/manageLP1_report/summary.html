@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>manageLP1 - Test Report</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      padding: 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .title h1 { margin: 0 0 6px 0; font-size: 24px; }
+    .title .meta { color: var(--text-muted); font-size: 14px; }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: #10b98122;
+      color: #10b981;
+      border: 1px solid #10b981;
+    }
+    .section { margin-bottom: 32px; }
+    .section h2 { font-size: 18px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 16px; color: var(--accent); }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .card-header { padding: 8px 12px; font-size: 12px; font-family: monospace; color: var(--text-muted); background: rgba(0,0,0,0.2); }
+    .card img { width: 100%; display: block; cursor: pointer; transition: transform 0.2s; }
+    .card img:hover { opacity: 0.95; }
+    .video-container {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 800px;
+    }
+    video { width: 100%; display: block; }
+    .error-box pre {
+      background: #450a0a;
+      border: 1px solid #dc2626;
+      color: #fca5a5;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .nav-links a { color: var(--accent); text-decoration: none; margin-right: 16px; font-size: 14px; }
+    .nav-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title">
+        <h1>test</h1>
+        <div class="meta">Module: <strong>CMT\manageLP</strong> | Spec: <code>manageLP1.spec.ts</code> | Duration: <strong>320.2s</strong></div>
+      </div>
+      <div>
+        <span class="badge">passed</span>
+      </div>
+    </div>
+
+    <div class="nav-links" style="margin-bottom: 20px;">
+      <a href="index.html">📋 View Playwright Trace Report</a>
+      <a href="../../index.html">🏠 Back to Master Dashboard</a>
+    </div>
+
+    
+    
+      <div class="section">
+        <h2>🎥 Video Recording</h2>
+        <div class="video-container">
+          <video controls preload="metadata">
+            <source src="videos/manageLP1_video.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    
+
+    <div class="section">
+      <h2>📸 Captured Screenshots (36)</h2>
+      <div class="grid">
+      <div class="card screenshot-card">
+        <div class="card-header">#1: 01_cmt_create_reg_category_form_filled.png</div>
+        <a href="screenshots/01_cmt_create_reg_category_form_filled.png" target="_blank">
+          <img src="screenshots/01_cmt_create_reg_category_form_filled.png" alt="01_cmt_create_reg_category_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#2: 02_cmt_create_reg_category_success_popup.png</div>
+        <a href="screenshots/02_cmt_create_reg_category_success_popup.png" target="_blank">
+          <img src="screenshots/02_cmt_create_reg_category_success_popup.png" alt="02_cmt_create_reg_category_success_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#3: 03_approver_search_registration_category.png</div>
+        <a href="screenshots/03_approver_search_registration_category.png" target="_blank">
+          <img src="screenshots/03_approver_search_registration_category.png" alt="03_approver_search_registration_category.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#4: 04_approver_remarks_registration_category.png</div>
+        <a href="screenshots/04_approver_remarks_registration_category.png" target="_blank">
+          <img src="screenshots/04_approver_remarks_registration_category.png" alt="04_approver_remarks_registration_category.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#5: 05_approver_accept_registration_category_success_popup.png</div>
+        <a href="screenshots/05_approver_accept_registration_category_success_popup.png" target="_blank">
+          <img src="screenshots/05_approver_accept_registration_category_success_popup.png" alt="05_approver_accept_registration_category_success_popup.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#6: 06_cmt_create_main_banner_form_filled.png</div>
+        <a href="screenshots/06_cmt_create_main_banner_form_filled.png" target="_blank">
+          <img src="screenshots/06_cmt_create_main_banner_form_filled.png" alt="06_cmt_create_main_banner_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#7: 07_cmt_create_main_banner_success.png</div>
+        <a href="screenshots/07_cmt_create_main_banner_success.png" target="_blank">
+          <img src="screenshots/07_cmt_create_main_banner_success.png" alt="07_cmt_create_main_banner_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#8: 08_approver_search_main_banner.png</div>
+        <a href="screenshots/08_approver_search_main_banner.png" target="_blank">
+          <img src="screenshots/08_approver_search_main_banner.png" alt="08_approver_search_main_banner.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#9: 09_approver_main_banner_remarks_filled.png</div>
+        <a href="screenshots/09_approver_main_banner_remarks_filled.png" target="_blank">
+          <img src="screenshots/09_approver_main_banner_remarks_filled.png" alt="09_approver_main_banner_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#10: 10_approver_accept_main_banner_success.png</div>
+        <a href="screenshots/10_approver_accept_main_banner_success.png" target="_blank">
+          <img src="screenshots/10_approver_accept_main_banner_success.png" alt="10_approver_accept_main_banner_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#11: 11_cmt_create_icon_form_filled.png</div>
+        <a href="screenshots/11_cmt_create_icon_form_filled.png" target="_blank">
+          <img src="screenshots/11_cmt_create_icon_form_filled.png" alt="11_cmt_create_icon_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#12: 12_cmt_create_icon_success.png</div>
+        <a href="screenshots/12_cmt_create_icon_success.png" target="_blank">
+          <img src="screenshots/12_cmt_create_icon_success.png" alt="12_cmt_create_icon_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#13: 13_approver_search_icon.png</div>
+        <a href="screenshots/13_approver_search_icon.png" target="_blank">
+          <img src="screenshots/13_approver_search_icon.png" alt="13_approver_search_icon.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#14: 14_approver_icon_remarks_filled.png</div>
+        <a href="screenshots/14_approver_icon_remarks_filled.png" target="_blank">
+          <img src="screenshots/14_approver_icon_remarks_filled.png" alt="14_approver_icon_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#15: 15_approver_accept_icon_success.png</div>
+        <a href="screenshots/15_approver_accept_icon_success.png" target="_blank">
+          <img src="screenshots/15_approver_accept_icon_success.png" alt="15_approver_accept_icon_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#16: 16_cmt_create_banner_scroll1_form_filled.png</div>
+        <a href="screenshots/16_cmt_create_banner_scroll1_form_filled.png" target="_blank">
+          <img src="screenshots/16_cmt_create_banner_scroll1_form_filled.png" alt="16_cmt_create_banner_scroll1_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#17: 17_cmt_create_banner_scroll1_success.png</div>
+        <a href="screenshots/17_cmt_create_banner_scroll1_success.png" target="_blank">
+          <img src="screenshots/17_cmt_create_banner_scroll1_success.png" alt="17_cmt_create_banner_scroll1_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#18: 18_cmt_create_banner_scroll2_form_filled.png</div>
+        <a href="screenshots/18_cmt_create_banner_scroll2_form_filled.png" target="_blank">
+          <img src="screenshots/18_cmt_create_banner_scroll2_form_filled.png" alt="18_cmt_create_banner_scroll2_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#19: 19_cmt_create_banner_scroll2_success.png</div>
+        <a href="screenshots/19_cmt_create_banner_scroll2_success.png" target="_blank">
+          <img src="screenshots/19_cmt_create_banner_scroll2_success.png" alt="19_cmt_create_banner_scroll2_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#20: 20_cmt_create_top_brands_form_filled.png</div>
+        <a href="screenshots/20_cmt_create_top_brands_form_filled.png" target="_blank">
+          <img src="screenshots/20_cmt_create_top_brands_form_filled.png" alt="20_cmt_create_top_brands_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#21: 21_cmt_create_top_brands_success.png</div>
+        <a href="screenshots/21_cmt_create_top_brands_success.png" target="_blank">
+          <img src="screenshots/21_cmt_create_top_brands_success.png" alt="21_cmt_create_top_brands_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#22: 22_cmt_create_upcoming_banner_form_filled.png</div>
+        <a href="screenshots/22_cmt_create_upcoming_banner_form_filled.png" target="_blank">
+          <img src="screenshots/22_cmt_create_upcoming_banner_form_filled.png" alt="22_cmt_create_upcoming_banner_form_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#23: 23_cmt_create_upcoming_banner_success.png</div>
+        <a href="screenshots/23_cmt_create_upcoming_banner_success.png" target="_blank">
+          <img src="screenshots/23_cmt_create_upcoming_banner_success.png" alt="23_cmt_create_upcoming_banner_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#24: 24_approver_search_upcoming_banner.png</div>
+        <a href="screenshots/24_approver_search_upcoming_banner.png" target="_blank">
+          <img src="screenshots/24_approver_search_upcoming_banner.png" alt="24_approver_search_upcoming_banner.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#25: 25_approver_upcoming_banner_remarks_filled.png</div>
+        <a href="screenshots/25_approver_upcoming_banner_remarks_filled.png" target="_blank">
+          <img src="screenshots/25_approver_upcoming_banner_remarks_filled.png" alt="25_approver_upcoming_banner_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#26: 26_approver_accept_upcoming_banner_success.png</div>
+        <a href="screenshots/26_approver_accept_upcoming_banner_success.png" target="_blank">
+          <img src="screenshots/26_approver_accept_upcoming_banner_success.png" alt="26_approver_accept_upcoming_banner_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#27: 27_approver_search_top_brands.png</div>
+        <a href="screenshots/27_approver_search_top_brands.png" target="_blank">
+          <img src="screenshots/27_approver_search_top_brands.png" alt="27_approver_search_top_brands.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#28: 28_approver_top_brands_remarks_filled.png</div>
+        <a href="screenshots/28_approver_top_brands_remarks_filled.png" target="_blank">
+          <img src="screenshots/28_approver_top_brands_remarks_filled.png" alt="28_approver_top_brands_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#29: 29_approver_accept_top_brands_success.png</div>
+        <a href="screenshots/29_approver_accept_top_brands_success.png" target="_blank">
+          <img src="screenshots/29_approver_accept_top_brands_success.png" alt="29_approver_accept_top_brands_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#30: 30_approver_search_banner_scroll1.png</div>
+        <a href="screenshots/30_approver_search_banner_scroll1.png" target="_blank">
+          <img src="screenshots/30_approver_search_banner_scroll1.png" alt="30_approver_search_banner_scroll1.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#31: 31_approver_banner_scroll1_remarks_filled.png</div>
+        <a href="screenshots/31_approver_banner_scroll1_remarks_filled.png" target="_blank">
+          <img src="screenshots/31_approver_banner_scroll1_remarks_filled.png" alt="31_approver_banner_scroll1_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#32: 32_approver_accept_banner_scroll1_success.png</div>
+        <a href="screenshots/32_approver_accept_banner_scroll1_success.png" target="_blank">
+          <img src="screenshots/32_approver_accept_banner_scroll1_success.png" alt="32_approver_accept_banner_scroll1_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#33: 33_approver_search_banner_scroll2.png</div>
+        <a href="screenshots/33_approver_search_banner_scroll2.png" target="_blank">
+          <img src="screenshots/33_approver_search_banner_scroll2.png" alt="33_approver_search_banner_scroll2.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#34: 34_approver_banner_scroll2_remarks_filled.png</div>
+        <a href="screenshots/34_approver_banner_scroll2_remarks_filled.png" target="_blank">
+          <img src="screenshots/34_approver_banner_scroll2_remarks_filled.png" alt="34_approver_banner_scroll2_remarks_filled.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#35: 35_approver_accept_banner_scroll2_success.png</div>
+        <a href="screenshots/35_approver_accept_banner_scroll2_success.png" target="_blank">
+          <img src="screenshots/35_approver_accept_banner_scroll2_success.png" alt="35_approver_accept_banner_scroll2_success.png" loading="lazy" />
+        </a>
+      </div>
+    
+
+      <div class="card screenshot-card">
+        <div class="card-header">#36: 36_cmt_verify_all_lp_sections.png</div>
+        <a href="screenshots/36_cmt_verify_all_lp_sections.png" target="_blank">
+          <img src="screenshots/36_cmt_verify_all_lp_sections.png" alt="36_cmt_verify_all_lp_sections.png" loading="lazy" />
+        </a>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>
