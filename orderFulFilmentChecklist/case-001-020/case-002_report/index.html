@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>case-002 - Test Report</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --pass: #10b981;
+      --fail: #ef4444;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 32px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .title { font-size: 22px; font-weight: 700; margin: 0; }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--pass);
+      border: 1px solid var(--pass);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .metric-value { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; margin: 0 0 16px 0; color: var(--accent); }
+    .error-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid var(--fail);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #fca5a5;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .video-container {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    video { width: 100%; height: auto; display: block; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0d131f;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-label {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content { max-width: 90%; max-height: 85%; }
+    .lightbox-content img { max-width: 100%; max-height: 80vh; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .lightbox-caption { color: #fff; margin-top: 12px; font-size: 14px; text-align: center; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 32px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-links">
+      <a href="../../index.html">🏠 Back to Master Dashboard</a>
+    </div>
+
+    <div class="header">
+      <div>
+        <h1 class="title">Case 002 - Full Order Fulfilment Flow</h1>
+        <p style="color: var(--text-muted); font-size: 13px; margin: 4px 0 0 0;">Module: <strong>orderFulFilmentChecklist\case-001-020</strong> | Spec: <code>case-002.spec.ts</code></p>
+      </div>
+      <span class="badge">PASSED</span>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-label">Duration</div>
+        <div class="metric-value">0.0s</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Screenshots</div>
+        <div class="metric-value">58</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Video Recording</div>
+        <div class="metric-value">Available</div>
+      </div>
+    </div>
+
+    
+
+    
+    <div class="section">
+      <h2 class="section-title">🎥 Video Recording</h2>
+      <div class="video-container">
+        <video controls autoplay muted>
+          <source src="videos/case-002_video.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📸 Captured Screenshots (58)</h2>
+      
+      <div class="gallery">
+        
+          <div class="gallery-item" onclick="openLightbox('screenshots/01_oft_order_assignment_pending_list.png', '01_oft_order_assignment_pending_list.png')">
+            <img src="screenshots/01_oft_order_assignment_pending_list.png" alt="01_oft_order_assignment_pending_list.png" loading="lazy" />
+            <div class="gallery-label">01_oft_order_assignment_pending_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/02_oft_order_searched.png', '02_oft_order_searched.png')">
+            <img src="screenshots/02_oft_order_searched.png" alt="02_oft_order_searched.png" loading="lazy" />
+            <div class="gallery-label">02_oft_order_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/03_oft_order_details.png', '03_oft_order_details.png')">
+            <img src="screenshots/03_oft_order_details.png" alt="03_oft_order_details.png" loading="lazy" />
+            <div class="gallery-label">03_oft_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/04_oft_assignment_form_filled.png', '04_oft_assignment_form_filled.png')">
+            <img src="screenshots/04_oft_assignment_form_filled.png" alt="04_oft_assignment_form_filled.png" loading="lazy" />
+            <div class="gallery-label">04_oft_assignment_form_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/05_oft_assignment_submit_popup.png', '05_oft_assignment_submit_popup.png')">
+            <img src="screenshots/05_oft_assignment_submit_popup.png" alt="05_oft_assignment_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">05_oft_assignment_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/06_rm_order_searched.png', '06_rm_order_searched.png')">
+            <img src="screenshots/06_rm_order_searched.png" alt="06_rm_order_searched.png" loading="lazy" />
+            <div class="gallery-label">06_rm_order_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/07_rm_order_details.png', '07_rm_order_details.png')">
+            <img src="screenshots/07_rm_order_details.png" alt="07_rm_order_details.png" loading="lazy" />
+            <div class="gallery-label">07_rm_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/08_rm_confirmation_form_filled.png', '08_rm_confirmation_form_filled.png')">
+            <img src="screenshots/08_rm_confirmation_form_filled.png" alt="08_rm_confirmation_form_filled.png" loading="lazy" />
+            <div class="gallery-label">08_rm_confirmation_form_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/09_rm_confirmation_submit_popup.png', '09_rm_confirmation_submit_popup.png')">
+            <img src="screenshots/09_rm_confirmation_submit_popup.png" alt="09_rm_confirmation_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">09_rm_confirmation_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/10_act_order_searched.png', '10_act_order_searched.png')">
+            <img src="screenshots/10_act_order_searched.png" alt="10_act_order_searched.png" loading="lazy" />
+            <div class="gallery-label">10_act_order_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/11_act_order_details.png', '11_act_order_details.png')">
+            <img src="screenshots/11_act_order_details.png" alt="11_act_order_details.png" loading="lazy" />
+            <div class="gallery-label">11_act_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/12_act_confirmation_form_filled.png', '12_act_confirmation_form_filled.png')">
+            <img src="screenshots/12_act_confirmation_form_filled.png" alt="12_act_confirmation_form_filled.png" loading="lazy" />
+            <div class="gallery-label">12_act_confirmation_form_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/13_act_confirmation_submit_popup.png', '13_act_confirmation_submit_popup.png')">
+            <img src="screenshots/13_act_confirmation_submit_popup.png" alt="13_act_confirmation_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">13_act_confirmation_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/14_oft_process_order_searched.png', '14_oft_process_order_searched.png')">
+            <img src="screenshots/14_oft_process_order_searched.png" alt="14_oft_process_order_searched.png" loading="lazy" />
+            <div class="gallery-label">14_oft_process_order_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/15_oft_process_order_details.png', '15_oft_process_order_details.png')">
+            <img src="screenshots/15_oft_process_order_details.png" alt="15_oft_process_order_details.png" loading="lazy" />
+            <div class="gallery-label">15_oft_process_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/16_oft_process_form_filled.png', '16_oft_process_form_filled.png')">
+            <img src="screenshots/16_oft_process_form_filled.png" alt="16_oft_process_form_filled.png" loading="lazy" />
+            <div class="gallery-label">16_oft_process_form_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/17_generate_pickup_slip_popup.png', '17_generate_pickup_slip_popup.png')">
+            <img src="screenshots/17_generate_pickup_slip_popup.png" alt="17_generate_pickup_slip_popup.png" loading="lazy" />
+            <div class="gallery-label">17_generate_pickup_slip_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/18_oft_final_confirmed_list.png', '18_oft_final_confirmed_list.png')">
+            <img src="screenshots/18_oft_final_confirmed_list.png" alt="18_oft_final_confirmed_list.png" loading="lazy" />
+            <div class="gallery-label">18_oft_final_confirmed_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/19_oft_final_confirmed_details.png', '19_oft_final_confirmed_details.png')">
+            <img src="screenshots/19_oft_final_confirmed_details.png" alt="19_oft_final_confirmed_details.png" loading="lazy" />
+            <div class="gallery-label">19_oft_final_confirmed_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/20_wh_pending_orders_list.png', '20_wh_pending_orders_list.png')">
+            <img src="screenshots/20_wh_pending_orders_list.png" alt="20_wh_pending_orders_list.png" loading="lazy" />
+            <div class="gallery-label">20_wh_pending_orders_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/21_wh_order_details.png', '21_wh_order_details.png')">
+            <img src="screenshots/21_wh_order_details.png" alt="21_wh_order_details.png" loading="lazy" />
+            <div class="gallery-label">21_wh_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/22_wh_order_sections_expanded.png', '22_wh_order_sections_expanded.png')">
+            <img src="screenshots/22_wh_order_sections_expanded.png" alt="22_wh_order_sections_expanded.png" loading="lazy" />
+            <div class="gallery-label">22_wh_order_sections_expanded.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/23_wh_product_sku_extracted.png', '23_wh_product_sku_extracted.png')">
+            <img src="screenshots/23_wh_product_sku_extracted.png" alt="23_wh_product_sku_extracted.png" loading="lazy" />
+            <div class="gallery-label">23_wh_product_sku_extracted.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/24_stock_audit_report_450926.png', '24_stock_audit_report_450926.png')">
+            <img src="screenshots/24_stock_audit_report_450926.png" alt="24_stock_audit_report_450926.png" loading="lazy" />
+            <div class="gallery-label">24_stock_audit_report_450926.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/25_imei_extracted_450926.png', '25_imei_extracted_450926.png')">
+            <img src="screenshots/25_imei_extracted_450926.png" alt="25_imei_extracted_450926.png" loading="lazy" />
+            <div class="gallery-label">25_imei_extracted_450926.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/26_wh_order_details_for_imei_fill.png', '26_wh_order_details_for_imei_fill.png')">
+            <img src="screenshots/26_wh_order_details_for_imei_fill.png" alt="26_wh_order_details_for_imei_fill.png" loading="lazy" />
+            <div class="gallery-label">26_wh_order_details_for_imei_fill.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/27_wh_imeis_filled.png', '27_wh_imeis_filled.png')">
+            <img src="screenshots/27_wh_imeis_filled.png" alt="27_wh_imeis_filled.png" loading="lazy" />
+            <div class="gallery-label">27_wh_imeis_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/28_wh_ready_to_pack_form_filled.png', '28_wh_ready_to_pack_form_filled.png')">
+            <img src="screenshots/28_wh_ready_to_pack_form_filled.png" alt="28_wh_ready_to_pack_form_filled.png" loading="lazy" />
+            <div class="gallery-label">28_wh_ready_to_pack_form_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/29_wh_submit_popup.png', '29_wh_submit_popup.png')">
+            <img src="screenshots/29_wh_submit_popup.png" alt="29_wh_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">29_wh_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/30_wh_processed_order_details.png', '30_wh_processed_order_details.png')">
+            <img src="screenshots/30_wh_processed_order_details.png" alt="30_wh_processed_order_details.png" loading="lazy" />
+            <div class="gallery-label">30_wh_processed_order_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/31_packing_ready_to_pack_list.png', '31_packing_ready_to_pack_list.png')">
+            <img src="screenshots/31_packing_ready_to_pack_list.png" alt="31_packing_ready_to_pack_list.png" loading="lazy" />
+            <div class="gallery-label">31_packing_ready_to_pack_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/32_packing_ready_to_pack_details.png', '32_packing_ready_to_pack_details.png')">
+            <img src="screenshots/32_packing_ready_to_pack_details.png" alt="32_packing_ready_to_pack_details.png" loading="lazy" />
+            <div class="gallery-label">32_packing_ready_to_pack_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/33_packing_received_selected.png', '33_packing_received_selected.png')">
+            <img src="screenshots/33_packing_received_selected.png" alt="33_packing_received_selected.png" loading="lazy" />
+            <div class="gallery-label">33_packing_received_selected.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/34_packing_received_submit_popup.png', '34_packing_received_submit_popup.png')">
+            <img src="screenshots/34_packing_received_submit_popup.png" alt="34_packing_received_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">34_packing_received_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/35_packing_received_for_packing_details.png', '35_packing_received_for_packing_details.png')">
+            <img src="screenshots/35_packing_received_for_packing_details.png" alt="35_packing_received_for_packing_details.png" loading="lazy" />
+            <div class="gallery-label">35_packing_received_for_packing_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/36_packing_form_filled_correct_invoice.png', '36_packing_form_filled_correct_invoice.png')">
+            <img src="screenshots/36_packing_form_filled_correct_invoice.png" alt="36_packing_form_filled_correct_invoice.png" loading="lazy" />
+            <div class="gallery-label">36_packing_form_filled_correct_invoice.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/37_packing_ready_to_ship_submit_popup.png', '37_packing_ready_to_ship_submit_popup.png')">
+            <img src="screenshots/37_packing_ready_to_ship_submit_popup.png" alt="37_packing_ready_to_ship_submit_popup.png" loading="lazy" />
+            <div class="gallery-label">37_packing_ready_to_ship_submit_popup.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/38_packing_final_details.png', '38_packing_final_details.png')">
+            <img src="screenshots/38_packing_final_details.png" alt="38_packing_final_details.png" loading="lazy" />
+            <div class="gallery-label">38_packing_final_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/39_oft_order_packed_details.png', '39_oft_order_packed_details.png')">
+            <img src="screenshots/39_oft_order_packed_details.png" alt="39_oft_order_packed_details.png" loading="lazy" />
+            <div class="gallery-label">39_oft_order_packed_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/40_oft_order_packed_process_clicked.png', '40_oft_order_packed_process_clicked.png')">
+            <img src="screenshots/40_oft_order_packed_process_clicked.png" alt="40_oft_order_packed_process_clicked.png" loading="lazy" />
+            <div class="gallery-label">40_oft_order_packed_process_clicked.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/41_oft_process_ship_to_success.png', '41_oft_process_ship_to_success.png')">
+            <img src="screenshots/41_oft_process_ship_to_success.png" alt="41_oft_process_ship_to_success.png" loading="lazy" />
+            <div class="gallery-label">41_oft_process_ship_to_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/42_oft_process_generate_awb_success.png', '42_oft_process_generate_awb_success.png')">
+            <img src="screenshots/42_oft_process_generate_awb_success.png" alt="42_oft_process_generate_awb_success.png" loading="lazy" />
+            <div class="gallery-label">42_oft_process_generate_awb_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/43_oft_process_remark_filled.png', '43_oft_process_remark_filled.png')">
+            <img src="screenshots/43_oft_process_remark_filled.png" alt="43_oft_process_remark_filled.png" loading="lazy" />
+            <div class="gallery-label">43_oft_process_remark_filled.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/44_oft_process_ready_to_ship_success.png', '44_oft_process_ready_to_ship_success.png')">
+            <img src="screenshots/44_oft_process_ready_to_ship_success.png" alt="44_oft_process_ready_to_ship_success.png" loading="lazy" />
+            <div class="gallery-label">44_oft_process_ready_to_ship_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/45_oft_out_station_ready_to_ship_searched.png', '45_oft_out_station_ready_to_ship_searched.png')">
+            <img src="screenshots/45_oft_out_station_ready_to_ship_searched.png" alt="45_oft_out_station_ready_to_ship_searched.png" loading="lazy" />
+            <div class="gallery-label">45_oft_out_station_ready_to_ship_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/46_oft_out_station_manifest_checked.png', '46_oft_out_station_manifest_checked.png')">
+            <img src="screenshots/46_oft_out_station_manifest_checked.png" alt="46_oft_out_station_manifest_checked.png" loading="lazy" />
+            <div class="gallery-label">46_oft_out_station_manifest_checked.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/47_oft_out_station_request_manifest_success.png', '47_oft_out_station_request_manifest_success.png')">
+            <img src="screenshots/47_oft_out_station_request_manifest_success.png" alt="47_oft_out_station_request_manifest_success.png" loading="lazy" />
+            <div class="gallery-label">47_oft_out_station_request_manifest_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/48_oftmgr_manifest_requests_list.png', '48_oftmgr_manifest_requests_list.png')">
+            <img src="screenshots/48_oftmgr_manifest_requests_list.png" alt="48_oftmgr_manifest_requests_list.png" loading="lazy" />
+            <div class="gallery-label">48_oftmgr_manifest_requests_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/49_oftmgr_manifest_released_verified.png', '49_oftmgr_manifest_released_verified.png')">
+            <img src="screenshots/49_oftmgr_manifest_released_verified.png" alt="49_oftmgr_manifest_released_verified.png" loading="lazy" />
+            <div class="gallery-label">49_oftmgr_manifest_released_verified.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/50_oft_print_manifest_searched.png', '50_oft_print_manifest_searched.png')">
+            <img src="screenshots/50_oft_print_manifest_searched.png" alt="50_oft_print_manifest_searched.png" loading="lazy" />
+            <div class="gallery-label">50_oft_print_manifest_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/51_oft_shipped_searched.png', '51_oft_shipped_searched.png')">
+            <img src="screenshots/51_oft_shipped_searched.png" alt="51_oft_shipped_searched.png" loading="lazy" />
+            <div class="gallery-label">51_oft_shipped_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/52_oft_shipped_success.png', '52_oft_shipped_success.png')">
+            <img src="screenshots/52_oft_shipped_success.png" alt="52_oft_shipped_success.png" loading="lazy" />
+            <div class="gallery-label">52_oft_shipped_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/53_oft_order_shipped_searched.png', '53_oft_order_shipped_searched.png')">
+            <img src="screenshots/53_oft_order_shipped_searched.png" alt="53_oft_order_shipped_searched.png" loading="lazy" />
+            <div class="gallery-label">53_oft_order_shipped_searched.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/54_oft_order_shipped_details.png', '54_oft_order_shipped_details.png')">
+            <img src="screenshots/54_oft_order_shipped_details.png" alt="54_oft_order_shipped_details.png" loading="lazy" />
+            <div class="gallery-label">54_oft_order_shipped_details.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/55_oft_order_delivered_selected.png', '55_oft_order_delivered_selected.png')">
+            <img src="screenshots/55_oft_order_delivered_selected.png" alt="55_oft_order_delivered_selected.png" loading="lazy" />
+            <div class="gallery-label">55_oft_order_delivered_selected.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/56_oft_order_delivered_success.png', '56_oft_order_delivered_success.png')">
+            <img src="screenshots/56_oft_order_delivered_success.png" alt="56_oft_order_delivered_success.png" loading="lazy" />
+            <div class="gallery-label">56_oft_order_delivered_success.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/57_oft_order_delivered_list.png', '57_oft_order_delivered_list.png')">
+            <img src="screenshots/57_oft_order_delivered_list.png" alt="57_oft_order_delivered_list.png" loading="lazy" />
+            <div class="gallery-label">57_oft_order_delivered_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/58_oft_order_delivered_final_details.png', '58_oft_order_delivered_final_details.png')">
+            <img src="screenshots/58_oft_order_delivered_final_details.png" alt="58_oft_order_delivered_final_details.png" loading="lazy" />
+            <div class="gallery-label">58_oft_order_delivered_final_details.png</div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
