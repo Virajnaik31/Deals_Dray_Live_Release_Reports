@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>step-09 - Test Report</title>
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f2937;
+      --text: #f9fafb;
+      --text-muted: #9ca3af;
+      --accent: #38bdf8;
+      --pass: #10b981;
+      --fail: #ef4444;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 32px 24px;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .title { font-size: 22px; font-weight: 700; margin: 0; }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: rgba(16, 185, 129, 0.15);
+      color: var(--pass);
+      border: 1px solid var(--pass);
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .metric-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .metric-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; }
+    .metric-value { font-size: 20px; font-weight: 700; color: var(--accent); }
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section-title { font-size: 16px; font-weight: 600; margin: 0 0 16px 0; color: var(--accent); }
+    .error-box {
+      background: rgba(239, 68, 68, 0.08);
+      border: 1px solid var(--fail);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: monospace;
+      font-size: 13px;
+      color: #fca5a5;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    .video-container {
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    video { width: 100%; height: auto; display: block; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .gallery-item {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #0d131f;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .gallery-item:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-label {
+      padding: 10px 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content { max-width: 90%; max-height: 85%; }
+    .lightbox-content img { max-width: 100%; max-height: 80vh; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+    .lightbox-caption { color: #fff; margin-top: 12px; font-size: 14px; text-align: center; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: #fff; font-size: 32px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav-links">
+      <a href="../../index.html">🏠 Back to Master Dashboard</a>
+    </div>
+
+    <div class="header">
+      <div>
+        <h1 class="title">Step 9 - OFT Manager Releases Manifest</h1>
+        <p style="color: var(--text-muted); font-size: 13px; margin: 4px 0 0 0;">Module: <strong>selfPickup</strong> | Spec: <code>step-09.spec.ts</code></p>
+      </div>
+      <span class="badge">PASSED</span>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-label">Duration</div>
+        <div class="metric-value">0.0s</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Screenshots</div>
+        <div class="metric-value">4</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Video Recording</div>
+        <div class="metric-value">Available</div>
+      </div>
+    </div>
+
+    
+
+    
+    <div class="section">
+      <h2 class="section-title">🎥 Video Recording</h2>
+      <div class="video-container">
+        <video controls autoplay muted>
+          <source src="videos/step-09_video.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">📸 Captured Screenshots (4)</h2>
+      
+      <div class="gallery">
+        
+          <div class="gallery-item" onclick="openLightbox('screenshots/01_01_oftmgr_dashboard_loaded.png', '01_01_oftmgr_dashboard_loaded.png')">
+            <img src="screenshots/01_01_oftmgr_dashboard_loaded.png" alt="01_01_oftmgr_dashboard_loaded.png" loading="lazy" />
+            <div class="gallery-label">01_01_oftmgr_dashboard_loaded.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/02_02_manifest_requests_list.png', '02_02_manifest_requests_list.png')">
+            <img src="screenshots/02_02_manifest_requests_list.png" alt="02_02_manifest_requests_list.png" loading="lazy" />
+            <div class="gallery-label">02_02_manifest_requests_list.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/03_03_manifest_released_verified.png', '03_03_manifest_released_verified.png')">
+            <img src="screenshots/03_03_manifest_released_verified.png" alt="03_03_manifest_released_verified.png" loading="lazy" />
+            <div class="gallery-label">03_03_manifest_released_verified.png</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('screenshots/04_04_oftmgr_logout_completed.png', '04_04_oftmgr_logout_completed.png')">
+            <img src="screenshots/04_04_oftmgr_logout_completed.png" alt="04_04_oftmgr_logout_completed.png" loading="lazy" />
+            <div class="gallery-label">04_04_oftmgr_logout_completed.png</div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="lightbox-close">&times;</span>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(src, caption) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      img.src = src;
+      cap.textContent = caption;
+      lb.classList.add('active');
+    }
+
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
